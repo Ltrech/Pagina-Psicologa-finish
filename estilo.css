@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+
+@font-face{
+    font-family: 'fuente1';
+    src: url(/Fuentes/fuente1.otf);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.float:hover {
+	text-decoration: none;
+	color: #25d366;
+  background-color:#fff;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+
+
+/* MENU */
+.contenedor-header {
+    background: #2f293d;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.contenedor-header header {
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo a {
+    font-family: 'Righteous';
+    font-size: 30px;
+    color: #faf9fa;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #921cb6;
+}
+
+.contenedor-header header ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.contenedor-header header nav ul li a {
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.contenedor-header header nav ul li a:hover {
+    color: #921cb6;
+}
+
+.nav-responsive {
+    background-color: #921cb6;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    .contenedor-header header nav {
+        display: none;
+        width: 100%;
+    }
+
+    .contenedor-header header nav.responsive {
+        display: block;
+        background-color: #2f293d;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .contenedor-header header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-header header nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+}
+
+
+/* SECCION I N I C I O */
+.inicio{
+    background: linear-gradient(to top, rgba(37, 30, 38, 0.6), rgb(38, 30, 38)),
+    url(img/fondo.jfif);
+    background-size: cover;
+    min-height: 100vh; /* Aumenta la altura mínima */
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.inicio .contenido-banner{
+    padding: 10px;
+    background: linear-gradient(to top, rgba(35, 30, 38, 0.6), rgb(37, 30, 38));
+    max-width: 350px;
+    margin:auto;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.inicio .contenido-banner img{
+    margin-top: 30px;
+    border: 5px solid #711cb6;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    border-radius: 20%;
+    
+}
+
+.inicio .contenido-banner a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+.inicio .contenido-banner button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.inicio .contenido-banner button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #b61cb6;
+    z-index: -1;
+    transition: 1s;
+    text-decoration: none;
+}
+
+.inicio .contenido-banner button:hover .overlay {
+    width: 100%; /* Al hacer hover, el ancho crece hasta cubrir el botón */
+}
+
+
+.inicio .contenido-banner h1{
+    margin-top: 40px;
+    font-size: 42px;
+    font-family: 'Righteous';
+}
+.inicio .contenido-banner h2{
+    font-size: 15px;
+    font-weight: normal;
+}
+.inicio .contenido-banner .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+.inicio .contenido-banner .redes a:hover{
+    background-color: #7e1cb6;
+}
+
+/* Diseño en pantallas grandes */
+.inicio .contenido-banner2,
+.inicio .contenido-banner3 {
+    padding: 20px;
+    background: linear-gradient(to top, rgba(35, 30, 38, 0.6), rgb(37, 30, 38));
+    max-width: 350px;
+    text-align: center;
+    border-radius: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inicio .contenido-banner2 {
+    left: 2%;
+}
+
+.inicio .contenido-banner3 {
+    right: 2%;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .inicio {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        padding-bottom: 70px; /* Espacio extra para evitar solapamiento con la siguiente sección */
+        padding-top: 70px; 
+    }
+
+    .inicio .contenido-banner,
+    .inicio .contenido-banner2,
+    .inicio .contenido-banner3 {
+        position:static; /* Quita el posicionamiento absoluto en pantallas pequeñas */
+        width: 70%; /* Ajusta el ancho para pantallas más pequeñas */
+        max-width: 100%; /* Asegura que no sobrepasen el contenedor */
+        margin: 20px auto; /* Añade margen para separarlos */
+        padding: 20px; /* Añade padding para espacio interior */
+        transform: none; /* Elimina cualquier transformación */
+        top: auto; /* Elimina la propiedad 'top' */
+        overflow: hidden; /* Evita que el contenido sobresalga */
+    }
+
+    /* Ajustes para las imágenes y su overlay */
+    .img-servicios img {
+        width: 100%; /* Ajusta las imágenes al ancho completo del contenedor */
+        height: auto; /* Mantiene la proporción de las imágenes */
+    }
+
+    .portfolio-servicios .img-servicios .overlay {
+        width: 100%; /* Asegura que el overlay cubra completamente la imagen */
+        height: 100%; /* Mantiene la altura completa */
+        opacity: 0; /* Inicia con opacidad 0 */
+        transition: opacity 0.5s ease; /* Suaviza la transición */
+    }
+
+    .portfolio-servicios .img-servicios:hover .overlay {
+        opacity: 1; /* Muestra el overlay al hacer hover */
+    }
+}
+
+
+/* Sobre MI*/
+
+
+.sobremi{
+    background-color: #25112ef8;
+    color: #fff;
+    padding: 50px 20px;
+}
+.sobremi .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.sobremi h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+
+}
+.sobremi .contenido-seccion p{
+    font: 18px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+.sobremi .contenido-seccion p span{
+    font-family:sans-serif;
+    font-size: 12px;
+    color: #fdfbfd;
+    font-weight: bold;
+}
+.sobremi .fila{
+    display: flex;
+}
+.sobremi .fila .col
+{
+    width: 50%;
+}
+.sobremi .fila .col h3{
+    font-size: 28px;
+    font-family: 'fuente1';
+    margin-bottom: 25px;
+}
+.sobremi .fila .col ul{
+    list-style: none;
+}
+.sobremi .fila .col ul li{
+    margin: 12px 0;
+}
+.sobremi .fila .col ul li strong{
+    display: inline-block;
+    color: #f9fafa;
+    width: 130px;
+}
+.sobremi .fila .col ul li span{
+ 
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.sobremi .fila .col .contenedor-intereses{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sobremi .fila .col .contenedor-intereses .interes{
+    width: 100px;
+    height: 100px;
+    background-color: #2a252e;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}.sobremi .fila .col .contenedor-intereses .interes:hover{
+    background-color: #851cb6;
+}
+.sobremi .fila .col .contenedor-intereses .interes i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.sobremi button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.sobremi button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #971cb6;
+    z-index: -1;
+    transition: 1s;
+}
+.sobremi button:hover .overlay{
+    width: 100%;
+}
+
+/* Estas clases se agregaran dinamicamente mediante javascript */
+
+/* SECCION SERVICIOS */
+
+#servicios {
+    background: linear-gradient(to top, rgba(37, 30, 38, 0.6), rgb(38, 30, 38)),
+    url(img/fondo.jfif);
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center;    /* Centra horizontalmente los elementos */
+    padding-top: 2rem;      /* Añade algo de espacio superior si lo necesitas */
+}
+
+#servicios h2 {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Righteous';
+    margin-bottom: 2rem;    /* Añade espacio entre el título y el contenido */
+}
+
+#servicios h3 {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 1rem;    /* Añade espacio entre el título y el contenido */
+}
+
+#servicios .portfolio-servicios p{
+    text-align: center;
+    font-size: 18px;
+}
+.portfolio-servicios {
+    position: relative;
+}
+
+.portfolio-servicios .img-servicios {
+    position: relative;
+    overflow: hidden; /* Evita que el overlay se salga del contenedor */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    width: 100%; /* Ajusta el tamaño del contenedor a la imagen */
+    max-width: 100%; /* Asegura que no sobrepase su contenedor */
+}
+
+.portfolio-servicios .img-servicios img {
+    display: block;
+    width: 20rem;
+    height: 30rem;
+    
+}
+
+/* Overlay */
+.portfolio-servicios .img-servicios .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(to top, rgba(35, 30, 38, 0.6), rgb(37, 30, 38));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centra el contenido del overlay verticalmente */
+    align-items: center;      /* Centra el contenido del overlay horizontalmente */
+    transition: opacity 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0; /* Inicia con opacidad cero */
+}
+
+/* Hover sobre el contenedor de la imagen */
+.portfolio-servicios .img-servicios:hover .overlay {
+    opacity: 1; /* Muestra el overlay cuando se hace hover sobre la imagen */
+}
+
+.portfolio-servicios .img-servicios .overlay h3 {
+    margin-bottom: 20px;
+    transition: margin-bottom 1s;
+}
+
+.portfolio-servicios .img-servicios:hover .overlay h3 {
+    margin-bottom: 0px; /* Reduce el margen inferior al hacer hover */
+}
+
+
+@media (min-width: 768px) {
+    .portfolio-servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+        margin: 5%;
+        text-align: center;
+    }
+}
+
+
+/* SECCION PORTFOLIO */
+
+.portfolio{
+    background-color: #35203ffd;
+    color: #fff;
+    padding: 50px 20px;
+}
+.portfolio .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.portfolio h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.portfolio .galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.portfolio .galeria .proyecto{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+.portfolio .galeria .proyecto img{
+    width: 100%;
+    display: block;
+}
+.portfolio .galeria .proyecto .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(to top, rgba(35, 30, 38, 0.6), rgb(37, 30, 38));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+}
+.portfolio .galeria .proyecto .overlay h3{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.portfolio .galeria .proyecto .overlay:hover{
+    opacity: 1;
+}
+.portfolio .galeria .proyecto .overlay:hover h3{
+    margin-bottom: 0px;
+}
+
+/* SECCION CONTACTO */
+
+.contacto{
+    background-image: url(img/contact_bg.png);
+    background-color: #241e26;
+    color: #fff;
+    padding: 50px 0;
+}
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.contacto .fila{
+    display: flex;
+}
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #2e252d;
+    color: #fff;
+    font-size: 18px;
+}
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #b61cb6;
+    z-index: -1;
+    transition: 1s;
+}
+.contacto button:hover .overlay{
+    width: 100%;
+}
+.contacto .col iframe{
+    position: absolute;
+    top: 5%;
+    height: 500px;
+    width: 100%;
+    background-color: #2e252d;
+    padding: 10px;
+    left: 10%;
+  
+}
+
+footer{
+    background-color: #2e252d;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    clear: both;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+footer .redes a{
+    color: #7e1cb6;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+
+footer .redes a:hover{
+    background-color: white;
+}
+footer .arriba{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #2e252d;
+    color: #7e1cb6;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+footer .arriba:hover{
+    background-color: #fff;
+}
+
+/* SECCION RESPONSIVE */@media (min-width: 1200px) {
+    .contenedor-header header {
+        max-width: 1400px;
+    }
+}
+
+/* Pantallas medianas (max-width: 980px) */
+@media screen and (max-width: 980px) {
+    nav {
+        display: none;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    nav.responsive {
+        display: block;
+        position: absolute;
+        right: 20px; /* Ajustado para alinearse correctamente */
+        top: 60px; /* Ajustado según el tamaño del header */
+        background-color: #2e252d;
+        width: 180px;
+        border-radius: 5px; /* Opcional: para esquinas redondeadas */
+        padding: 10px 0;
+    }
+
+    nav.responsive ul {
+        display: block !important;
+    }
+
+    nav.responsive ul li {
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Pantallas pequeñas (max-width: 768px) */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contenedor-header header ul {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+    }
+    .nav-responsive {
+        display: block; /* Muestra el botón de menú en pantallas pequeñas */
+    }
+}
+/* Pantallas muy pequeñas (max-width: 700px) */
+@media screen and (max-width: 700px) {
+    .sobremi .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobremi .fila .col {
+        width: 100%;
+    }
+
+    .portfolio .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio .galeria .proyecto {
+        max-width: 100%;
+    }
+
+    .portfolio .galeria .proyecto img {
+        width: 100%;
+    }
+
+    .contacto .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto .col {
+        width: 100%;
+    }
+}
+
+/* Pantallas muy pequeñas (max-width: 480px) */
+
+
+    
+    .contacto .col iframe {
+        height: 500px;  /* Ajustar el tamaño si es necesario */
+        width: 100%;
+        background-color: #2e252d;
+        padding: 10px;
+        position: relative;  /* Eliminar absolute para mantenerlo en el flujo del documento */
+        left: 0;             /* Asegurarse de que el iframe esté alineado correctamente */
+        top: 0;              /* Eliminar cualquier desplazamiento */
+    }
+
+    .sobremi h2,
+    .portfolio h2,
+    .contacto h2 {
+        font-size: 36px; /* Reduce el tamaño de fuente en títulos */
+    }
+
+    .sobremi .fila .col h3 {
+        font-size: 24px; /* Reduce el tamaño de fuente en subtítulos */
+    }
+
+    .portfolio h2,
+    .sobremi h2,
+    .contacto h2 {
+        padding: 10px 0;
+    }
+
+    .contenedor-header header {
+        padding: 10px 15px;
+    }
+
+    .contenedor-header header .logo a {
+        font-size: 24px; /* Reduce el tamaño del logo de texto */
+    }
+
+    .logo2 img {
+        width: 40px; /* Reduce el tamaño del logo 2 */
+    }
+
+    .contenedor-header header nav ul li a {
+        margin: 0 10px; /* Reduce el margen entre enlaces del menú */
+        font-size: 14px; /* Reduce el tamaño de fuente de los enlaces */
+    }
+@media (max-width: 768px) {
+    .contacto .col iframe {
+        height: 300px;  /* Reducir el tamaño en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto .col iframe {
+        height: 200px;  /* Ajustar aún más para móviles pequeños */
+    }
+}
