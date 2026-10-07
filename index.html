@@ -1,289 +1,333 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/Crea-circular.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Psicologa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Cecilia Rea | Psicóloga en Temperley · Adultos, adolescentes y niños</title>
+    <meta name="description" content="Cecilia Rea, Licenciada en Psicología (TCC y psicoanálisis). Terapia presencial en Temperley y online para adultos, adolescentes y niños desde 8 años. Pedí tu turno por WhatsApp.">
+    <meta name="theme-color" content="#5a2d82">
+
+    <!-- Redes sociales (cuando compartan el link) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Cecilia Rea | Psicóloga en Temperley">
+    <meta property="og:description" content="Terapia presencial y online para adultos, adolescentes y niños desde 8 años.">
+    <meta property="og:image" content="img/ccc.jfif">
+
+    <link rel="icon" href="img/Crea-circular.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
+
+    <!-- Datos estructurados: ayudan a Google a mostrar el consultorio en búsquedas y mapas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Psychologist",
+      "name": "CREA Salud Mental – Cecilia Rea",
+      "description": "Licenciada en Psicología. Terapia cognitivo-conductual y psicoanálisis para adultos, adolescentes y niños desde 8 años.",
+      "image": "img/ccc.jfif",
+      "telephone": "+5491151063224",
+      "email": "crea.psicologa@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Indalecio Gómez 70",
+        "addressLocality": "Temperley",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "sameAs": ["https://www.instagram.com/crea_salud_mental"]
+    }
+    </script>
 </head>
 <body>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://api.whatsapp.com/send?phone=1151063224&text=Hola!Crea%20Salud%20Mental%20te%20espera." class="float" target="_blank">
-    <i class="fa fa-whatsapp my-float"></i>
-    </a>
-     <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">CREA Salud Mental</a>
-            </div>
 
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#servicios" onclick="seleccionar()">SERVICIOS</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">INSTALACIONES</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
+<!-- Iconos (se reutilizan con <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.47 15.02L2 22l5.1-1.34A9.9 9.9 0 1 0 12.04 2Zm0 18.1c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.03.8.81-2.95-.2-.31a8.1 8.1 0 1 1 6.97 3.8Zm4.45-6.06c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.31-.75-1.8-.2-.47-.4-.4-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.2 2.2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm8 7.2L4.6 6.3v.1L12 12l7.4-5.6v-.1L12 11.2ZM4 8.8V18h16V8.8l-8 6-8-6Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></symbol>
+</svg>
 
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
-                <img src="img/ccc.jfif" alt="">
-            </div>
-            <h1>Cecilia Rea</h1>
-            <h2>Licenciada en Psicología</h2>
-            <a href="#contacto">
-                <button id="btnEnviarMensaje">
-                    Enviar Mensaje
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span class="overlay"></span>
-                </button>
-            </a>
-            <div class="redes">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                
-                <a href="https://www.instagram.com/crea_salud_mental?igsh=anVvd3ZzenM3MW16&utm_source=qr" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-        <div class="contenido-banner2">
-            
-            <p>“El objetivo de la terapia no es cambiar al paciente, sino ayudarlo a descubrir quién es realmente" (Car Jung)</p>
-               
-        </div>
-        <div class="contenido-banner3">
-            
-            <p>“La verdadera libertad es entender que no siempre controlamos lo que sentimos, pero sí cómo lo vivimos."(Jacques Lacan)</p>
-               
-        </div>
-        
-
-    </section>
-
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-seccion">
-            <h2>Sobre Mí</h2>
-            <p><span>Soy Cecilia Rea, Licenciada en Psicología con especialización en Tratamiento y Clínica en Terapia Cognitivo-Conductual (TCC) y formación en Psicoanálisis.. Me apasiona entender a las personas, su mentalidad y sus desafíos, para poder guiarlas y acompañarlas en su camino hacia la mejora continua.
-                Con un enfoque ecléctico, me adapto a las necesidades individuales de cada paciente, abordando temas como la ansiedad, el estrés, la autoestima y el desarrollo personal. A través de la evaluación y psicodiagnóstico, obtengo una comprensión profunda de las necesidades y circunstancias de cada paciente, lo que me permite desarrollar planes de tratamiento personalizados y efectivos.
-                Además de mi formación en Psicología, también soy Licenciada en Relaciones Laborales y tengo una Maestría Internacional en Recursos Humanos. Mi experiencia en el ámbito laboral me ha permitido comprender mejor las dinámicas humanas y aplicar mis conocimientos en beneficio de mis pacientes.
-                Mi objetivo es crear un espacio seguro y de confianza, donde mis pacientes se sientan cómodos compartiendo sus pensamientos y sentimientos. Estoy aquí para acompañarte en tu camino hacia la superación y el bienestar. ¡No dudes en contactarme para empezar atrabajar juntos en tu salud mental!
-                .</p>
-
-            <div class="fila">
-                <!-- datos personales -->
-                <div class="col">
-                    <h3>Datos Personales</h3>
-                    <ul>
-                        <li>
-                            <strong>Cumpleaños</strong>
-                            19-08-1985
-                        </li>
-                        <li>
-                            <strong>Teléfono</strong>
-                            11-51063224
-                        </li>
-                        <li>
-                            <strong>Email</strong>
-                            crea.psicologa@gmail.com
-                        </li>
-                        <li>
-                            <strong>Website</strong>
-                            www.CrearSaludMental.com
-                        </li>
-                        <li>
-                            <strong>Dirección</strong>
-                            Indalecio Gómez 70 (esq. Leloir) Temperley- Lomas de Zamora
-                        </li>
-                        <li>
-                            <strong>Cargo</strong>
-                            <span>PSICOLOGA</span>
-                        </li>
-                    </ul>
-                </div>
-                 
-                <!-- intereses -->
-                <div class="col">
-                    <h3>Intereses</h3>
-                    <div class="contenedor-intereses">
-                        <div class="interes">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>JUEGOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-brands fa-apple"></i>
-                            <span>MAC OS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-person-hiking"></i>
-                            <span>DEPORTE</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-book"></i>
-                            <span>LIBROS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-car"></i>
-                            <span>AUTOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>FOTOS</span>
-                        </div>
-                        
-                    </div>
-                </div>
-           
-    </section>
-
-<!-- SERVICIOS -->
-<section id="servicios" >
-
-    <h2>SERVICIOS</h2>
-
-    <div class="portfolio-servicios">
-    <section>
-        <h3>Atención a Niños + 8</h3>
-        <div class="img-servicios">
-            <img src="img/infantil2.jpg" alt="">
-            <div class="overlay">
-                <h3>CREA</h3>
-                <p>Salud Mental</p>
-                <p>Atencion a niños +8</p>
-            </div>
-        </div>
-        
-        <p>Intervenciones psicológicas adaptadas a las necesidades y etapas de desarrollo de niños a partir de 8 años. Trabajamos en la gestión emocional, habilidades sociales y resolución de conflictos, fomentando su bienestar y desarrollo integral..</p>
-        </section>
-    <section>
-        <h3>Atención a Adolescentes</h3>
-        <div class="img-servicios" >
-            <img src="img/adolescentes1.jpg" alt="">
-            <div class="overlay">
-                <h3>CREA</h3>
-                <p>Salud Mental</p>
-                <p>Atencion a adolescentes</p>
-            </div>
-        </div>
-        
-        <p>Espacios de escucha y orientación para adolescentes, abordando temáticas como autoestima, relaciones interpersonales, manejo de la ansiedad y toma de decisiones, en un entorno seguro y de confianza. .</p>
-    </section>  
-    <section>
-        <h3>Atención a Adultos</h3>
-        <div class="img-servicios">
-            <img src="img/adultos1.jpg" alt="">
-            <div class="overlay">
-                <h3>CREA</h3>
-                <p>Salud Mental</p>
-                <p>Atencion a adultos</p>
-            </div>
-        </div>
-       
-        <p>Acompañamiento psicológico para afrontar desafíos personales, emocionales y laborales. Brindamos herramientas para mejorar la gestión del estrés, la comunicación y la calidad de vida..</p> 
-    </section>     
-</div>   
-
-</section>
-
-
-
-    <!-- SECCION PORTFOLIO -->
-    <section id="portfolio" class="portfolio">
-        <div class="contenido-seccion">
-            <h2>INSTALACIONES</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/141257d7-1cf5-4292-9a9c-5a418223d62c.jfif" alt="">
-                    <div class="overlay">
-                        <h3>CREA</h3>
-                        <p>Salud Mental</p>
-                        <p>Terapias online</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Consultorio2.jfif" alt="">
-                    <div class="overlay">
-                        <h3>CREA</h3>
-                        <p>Salud Mental</p>
-                        <p>Terapias Presenciales</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Consultorio3.jfif" alt="">
-                    <div class="overlay">
-                        <h3>CREA</h3>
-                        <p>Salud Mental</p>
-                        <p>Terapias Telefonicas</p>
-                    </div>
-                </div>
-               
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>CONTACTO</h2>
-            <div class="fila">
-                <!-- Formulario -->
-                <div class="col">
-                    <form id="contactForm" action="https://formspree.io/f/xvgpevbz" method="POST">
-                        <input type="text" name="nombre" placeholder="Tú Nombre" required>
-                        <input type="text" name="telefono" placeholder="Número telefónico" required>
-                        <input type="email" name="email" placeholder="Dirección de correo" required>
-                        <input type="text" name="tema" placeholder="Tema" required>
-                        <textarea name="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
-                        <button type="submit">
-                            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-                            <span class="overlay"></span>
-                    </button>
-                </div>
-                
-                <!-- Mapa -->
-                <div class="col">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.7736014636375!2d-58.39646662408971!3d-34.78647436717323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd32272d983eb%3A0x4e565d53345ea582!2sIndalecio%20G%C3%B3mez%2070%2C%20B1834BYB%20Temperley%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1726072222745!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
+<!-- ENCABEZADO -->
+<header class="encabezado" id="encabezado">
+    <div class="encabezado__interno">
+        <a class="marca" href="#inicio" aria-label="CREA Salud Mental, ir al inicio">
+            <span class="marca__nombre">CREA</span>
+            <span class="marca__detalle">Salud Mental</span>
         </a>
-        <div class="redes">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            
-            <a href="https://www.instagram.com/crea_salud_mental?igsh=anVvd3ZzenM3MW16&utm_source=qr" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
+
+        <nav class="menu" id="menu" aria-label="Principal">
+            <ul>
+                <li><a href="#sobremi">Sobre mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#modalidades">Modalidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a class="boton boton--chico menu__turno" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">Pedir turno</a>
+        </nav>
+
+        <button class="hamburguesa" id="hamburguesa" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<main id="contenido">
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+        <div class="hero__interno">
+            <div class="hero__texto">
+                <h1>Terapia para entenderte y sentirte mejor, a tu ritmo.</h1>
+                <p class="hero__bajada">
+                    Soy Cecilia Rea, Licenciada en Psicología. Atiendo a adultos, adolescentes y niños desde 8 años,
+                    de forma presencial en Temperley y online.
+                </p>
+                <div class="hero__acciones">
+                    <a class="boton" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
+                        <svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                        Escribime por WhatsApp
+                    </a>
+                    <a class="boton boton--borde" href="#sobremi">Conocer cómo trabajo</a>
+                </div>
+            </div>
+
+            <figure class="hero__foto">
+                <img src="img/cccjpg.jpg" alt="Cecilia Rea, Licenciada en Psicología" width="640" height="800" fetchpriority="high" decoding="async">
+                <figcaption>Lic. Cecilia Rea<span>Psicóloga</span></figcaption>
+            </figure>
         </div>
-    </footer>
+    </section>
+
+    <!-- FRASES -->
+    <section class="frases" aria-label="Frases que inspiran mi trabajo">
+        <div class="frases__interno">
+            <blockquote>
+                <p>El objetivo de la terapia no es cambiar al paciente, sino ayudarlo a descubrir quién es realmente.</p>
+                <footer>Carl Jung</footer>
+            </blockquote>
+            <blockquote>
+                <p>La verdadera libertad es entender que no siempre controlamos lo que sentimos, pero sí cómo lo vivimos.</p>
+                <footer>Jacques Lacan</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="seccion" id="sobremi">
+        <div class="seccion__interno sobremi">
+            <div class="sobremi__texto">
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy Licenciada en Psicología, con especialización en clínica y tratamiento en Terapia
+                    Cognitivo-Conductual (TCC) y formación en Psicoanálisis. Me interesa entender a cada persona,
+                    su forma de pensar y lo que está atravesando, para acompañarla en su camino hacia el bienestar.
+                </p>
+                <p>
+                    Trabajo con un enfoque ecléctico: me adapto a lo que necesita cada paciente. A través de la
+                    evaluación y el psicodiagnóstico comprendo su situación y armo un plan de tratamiento personalizado.
+                </p>
+                <p>
+                    También soy Licenciada en Relaciones Laborales y tengo una Maestría Internacional en Recursos Humanos.
+                    Esa experiencia en el mundo del trabajo me ayuda a entender mejor las dinámicas entre las personas.
+                </p>
+                <p>
+                    Mi objetivo es que tengas un espacio seguro y de confianza, donde puedas hablar con libertad de lo que
+                    pensás y sentís.
+                </p>
+                <a class="boton" href="#contacto">Empezar a trabajar juntos</a>
+            </div>
+
+            <aside class="sobremi__datos">
+                <section>
+                    <h3>Formación</h3>
+                    <ul>
+                        <li>Licenciada en Psicología</li>
+                        <li>Especialización en clínica y tratamiento en Terapia Cognitivo-Conductual</li>
+                        <li>Formación en Psicoanálisis</li>
+                        <li>Licenciada en Relaciones Laborales</li>
+                        <li>Maestría Internacional en Recursos Humanos</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Temas que acompaño</h3>
+                    <ul>
+                        <li>Ansiedad</li>
+                        <li>Estrés</li>
+                        <li>Autoestima</li>
+                        <li>Desarrollo personal</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="seccion seccion--lila" id="servicios">
+        <div class="seccion__interno">
+            <h2>Servicios</h2>
+            <p class="seccion__intro">Un espacio de atención para cada etapa. Escribime y vemos cuál es el mejor para vos o tu familia.</p>
+
+            <div class="servicios">
+                <article class="servicio">
+                    <img src="img/infantil2.jpg" alt="Niño dibujando durante una sesión de terapia" loading="lazy" decoding="async" width="800" height="600">
+                    <div class="servicio__texto">
+                        <h3>Niños desde 8 años</h3>
+                        <p>Intervenciones psicológicas adaptadas a las necesidades y etapas de desarrollo de cada niño. Trabajamos la gestión emocional, las habilidades sociales y la resolución de conflictos, para favorecer su bienestar y su desarrollo integral.</p>
+                        <a class="enlace" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20consultar%20por%20atenci%C3%B3n%20para%20un%20ni%C3%B1o." target="_blank" rel="noopener">Consultar por atención infantil</a>
+                    </div>
+                </article>
+
+                <article class="servicio">
+                    <img src="img/adolescentes1.jpg" alt="Adolescentes conversando" loading="lazy" decoding="async" width="800" height="600">
+                    <div class="servicio__texto">
+                        <h3>Adolescentes</h3>
+                        <p>Un espacio de escucha y orientación, en un entorno seguro y de confianza, para hablar de autoestima, relaciones, manejo de la ansiedad y toma de decisiones.</p>
+                        <a class="enlace" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20consultar%20por%20atenci%C3%B3n%20para%20un%20adolescente." target="_blank" rel="noopener">Consultar por atención de adolescentes</a>
+                    </div>
+                </article>
+
+                <article class="servicio">
+                    <img src="img/adultos1.jpg" alt="Adulto en una conversación de terapia" loading="lazy" decoding="async" width="800" height="600">
+                    <div class="servicio__texto">
+                        <h3>Adultos</h3>
+                        <p>Acompañamiento psicológico para afrontar desafíos personales, emocionales y laborales. Incorporamos herramientas para manejar mejor el estrés, comunicarte con otros y mejorar tu calidad de vida.</p>
+                        <a class="enlace" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20consultar%20por%20atenci%C3%B3n%20para%20adultos." target="_blank" rel="noopener">Consultar por atención de adultos</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section class="seccion" id="modalidades">
+        <div class="seccion__interno">
+            <h2>Modalidades de atención</h2>
+            <p class="seccion__intro">Elegí cómo te resulta más cómodo: en el consultorio, por videollamada o por teléfono.</p>
+
+            <div class="modalidades">
+                <figure>
+                    <img src="img/141257d7-1cf5-4292-9a9c-5a418223d62c.jfif" alt="Espacio preparado para terapia online" loading="lazy" decoding="async" width="600" height="450">
+                    <figcaption>
+                        <strong>Online</strong>
+                        Sesiones por videollamada, desde donde estés.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="img/Consultorio2.jfif" alt="Consultorio de CREA Salud Mental en Temperley" loading="lazy" decoding="async" width="600" height="450">
+                    <figcaption>
+                        <strong>Presencial</strong>
+                        En el consultorio de Temperley.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="img/Consultorio3.jfif" alt="Rincón del consultorio de CREA Salud Mental" loading="lazy" decoding="async" width="600" height="450">
+                    <figcaption>
+                        <strong>Telefónica</strong>
+                        Sesiones por llamada, cuando no podés conectarte por video.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="seccion seccion--salvia" id="contacto">
+        <div class="seccion__interno contacto">
+            <div class="contacto__datos">
+                <h2>Pedí tu turno</h2>
+                <p class="seccion__intro">La forma más rápida es por WhatsApp. También podés dejarme un mensaje en el formulario y te respondo por teléfono o email.</p>
+
+                <a class="boton boton--whatsapp" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
+                    <svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                    Escribir por WhatsApp
+                </a>
+
+                <ul class="lista-contacto">
+                    <li>
+                        <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
+                        <a href="tel:+5491151063224">11 5106-3224</a>
+                    </li>
+                    <li>
+                        <svg class="icono" aria-hidden="true"><use href="#i-mail"/></svg>
+                        <a href="mailto:crea.psicologa@gmail.com">crea.psicologa@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg class="icono" aria-hidden="true"><use href="#i-pin"/></svg>
+                        <span>Indalecio Gómez 70 (esq. Leloir), Temperley, Lomas de Zamora</span>
+                    </li>
+                </ul>
+
+                <form id="formulario" action="https://formspree.io/f/xvgpevbz" method="POST">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" name="nombre" autocomplete="name" required>
+                    </div>
+                    <div class="campo-doble">
+                        <div class="campo">
+                            <label for="telefono">Teléfono</label>
+                            <input id="telefono" type="tel" name="telefono" autocomplete="tel" required>
+                        </div>
+                        <div class="campo">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="tema">Tema de consulta</label>
+                        <input id="tema" type="text" name="tema" required>
+                    </div>
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <!-- Trampa anti-spam: las personas no lo ven, los robots sí -->
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="trampa" aria-hidden="true">
+
+                    <button class="boton" type="submit">Enviar mensaje</button>
+                    <p class="estado" id="estado" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="urgencia">
+                    Este formulario no es para urgencias. Si vos o alguien cercano está en riesgo, llamá al
+                    <a href="tel:135">135</a> (Centro de Asistencia al Suicida, gratuito desde CABA y Gran Buenos Aires)
+                    o al <a href="tel:107">107</a> (emergencias médicas).
+                </p>
+            </div>
+
+            <div class="contacto__mapa">
+                <iframe title="Mapa del consultorio en Indalecio Gómez 70, Temperley" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.7736014636375!2d-58.39646662408971!3d-34.78647436717323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd32272d983eb%3A0x4e565d53345ea582!2sIndalecio%20G%C3%B3mez%2070%2C%20B1834BYB%20Temperley%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1726072222745!5m2!1ses-419!2sar" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="pie">
+    <div class="pie__interno">
+        <div>
+            <p class="pie__marca">CREA Salud Mental</p>
+            <p>Lic. Cecilia Rea · Psicóloga · Temperley, Buenos Aires</p>
+            <!-- Sugerencia: agregar acá el número de matrícula profesional (M.N. / M.P.) -->
+        </div>
+        <a class="pie__ig" href="https://www.instagram.com/crea_salud_mental?igsh=anVvd3ZzenM3MW16&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram de CREA Salud Mental">
+            <svg class="icono" aria-hidden="true"><use href="#i-instagram"/></svg>
+            @crea_salud_mental
+        </a>
+    </div>
+    <p class="pie__legal">© <span id="anio">2025</span> CREA Salud Mental. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a class="flotante" href="https://wa.me/5491151063224?text=Hola%20Cecilia%2C%20quisiera%20pedir%20un%20turno." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg class="icono" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+</a>
 
 <script src="script.js"></script>
 </body>
