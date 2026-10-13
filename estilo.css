@@ -1,5 +1,5 @@
 /* ==========================================================
-   CREA Salud Mental · Cecilia Rea
+   CREA by Cecilia Rea
    Paleta
      --ciruela  #5a2d82  color de marca (botones, enlaces)
      --tinta    #241b33  texto principal
@@ -125,12 +125,14 @@ a { color: var(--ciruela); }
     justify-content: space-between;
 }
 
-.marca { text-decoration: none; color: #fff; display: flex; flex-direction: column; line-height: 1.05; }
+.marca { text-decoration: none; color: #fff; display: flex; align-items: center; gap: 12px; line-height: 1.05; }
+.marca__logo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; background: #faf7fa; box-shadow: 0 0 0 2px rgba(255, 255, 255, .35); flex: none; }
+.marca__texto { display: flex; flex-direction: column; }
 .marca__nombre { font: 600 1.7rem/1 var(--f-titulo); letter-spacing: .04em; color: #fff; }
 .marca__detalle { font-size: .8rem; color: #e3d6f2; }
 
-.menu { display: flex; align-items: center; gap: 28px; }
-.menu ul { display: flex; gap: 26px; }
+.menu { display: flex; align-items: center; gap: 24px; }
+.menu ul { display: flex; gap: 22px; }
 .menu ul a {
     color: #fff;
     text-decoration: none;
@@ -187,27 +189,30 @@ h3 { font-size: 1.4rem; }
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
     font-weight: 450;
     letter-spacing: -.015em;
     margin-bottom: 24px;
     animation: entrar .9s cubic-bezier(.2, .7, .2, 1) both;
 }
-.hero__bajada { max-width: 50ch; font-size: 1.2rem; color: var(--tinta-suave); margin-bottom: 36px; animation: entrar .9s .12s cubic-bezier(.2, .7, .2, 1) both; }
+.hero__bajada { max-width: 50ch; font-size: 1.2rem; color: var(--tinta-suave); margin-bottom: 20px; animation: entrar .9s .12s cubic-bezier(.2, .7, .2, 1) both; }
+.hero__lema { font: italic 400 1.3rem/1.3 var(--f-titulo); color: var(--ciruela); margin-bottom: 14px; }
+.hero__datos { display: grid; gap: 6px; margin-bottom: 32px; font-weight: 500; animation: entrar .9s .18s cubic-bezier(.2, .7, .2, 1) both; }
 .hero__acciones { display: flex; flex-wrap: wrap; gap: 14px; animation: entrar .9s .24s cubic-bezier(.2, .7, .2, 1) both; }
 
 @keyframes entrar { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
-.hero__foto { position: relative; justify-self: center; width: min(100%, 400px); padding-right: 16px; text-align: center; }
+.hero__foto { position: relative; justify-self: center; width: min(calc(100% - 32px), 400px); margin: 16px; text-align: center; }
 .hero__foto img {
     position: relative;
     z-index: 1;
     width: 100%;
     height: auto;
-    object-fit: contain;
-    border-radius: 28px;
-    background: #2a0a4a;
-    box-shadow: 16px 16px 0 #cdbbe3;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #faf7fa;
+    box-shadow: 0 0 0 14px #cdbbe3, 0 18px 40px rgba(58, 26, 92, .22); /* aro lila + sombra suave */
 }
 .hero__foto figcaption {
     position: relative;
@@ -226,7 +231,10 @@ h3 { font-size: 1.4rem; }
 .frases blockquote footer { margin-top: 14px; color: #dccdee; font-size: .95rem; }
 
 /* ---------- Sobre mí ---------- */
-.sobremi { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.sobremi { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+.sobremi__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: 28px; background: var(--lila); }
+.sobremi__foto figcaption { margin-top: 16px; color: var(--tinta-suave); }
+.sobremi__foto figcaption strong { display: block; font: 500 1.25rem/1.3 var(--f-titulo); color: var(--tinta); }
 .sobremi__texto p { max-width: 62ch; margin-bottom: 18px; }
 .sobremi__texto .boton { margin-top: 14px; }
 
@@ -235,24 +243,56 @@ h3 { font-size: 1.4rem; }
 .sobremi__datos li { padding: 8px 0; border-top: 1px solid var(--linea); }
 .sobremi__datos li:first-child { border-top: 0; padding-top: 0; }
 
-/* ---------- Servicios ---------- */
-.servicios { display: grid; gap: clamp(48px, 7vw, 88px); }
-.servicio { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
-.servicio:nth-child(even) img { order: 2; }
-.servicio img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio); background: var(--niebla); }
-.servicio__texto h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 14px; }
-.servicio__texto p { max-width: 52ch; margin-bottom: 18px; }
+/* ---------- Servicios (tarjetas) ---------- */
+.servicios { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+.servicio { grid-column: span 2; display: flex; flex-direction: column; background: var(--blanco); border-radius: var(--radio); overflow: hidden; }
+.servicio:nth-child(4) { grid-column: 2 / span 2; }
+.servicio:nth-child(5) { grid-column: 4 / span 2; }
+.servicio__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--lila); }
+.servicio__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.servicio__texto { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px; flex: 1; }
+.servicio__texto h3 { font-size: 1.35rem; }
+.servicio__texto p { color: var(--tinta-suave); flex: 1; }
 
-/* ---------- Modalidades ---------- */
-.modalidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.modalidades img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio); background: var(--lila); margin-bottom: 14px; }
-.modalidades figcaption { color: var(--tinta-suave); }
+/* Ventana de detalle de cada servicio */
+.detalle { border: 0; border-radius: 24px; padding: 36px clamp(22px, 5vw, 44px) 32px; width: min(640px, calc(100% - 32px)); max-height: 88vh; overflow-y: auto; background: var(--niebla); color: var(--tinta); margin: auto; }
+.detalle::backdrop { background: rgba(36, 27, 51, .6); }
+.detalle h3 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-bottom: 20px; padding-right: 40px; }
+.detalle__texto p { margin-bottom: 14px; }
+.detalle__acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.detalle__cerrar { position: absolute; top: 14px; right: 14px; width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--lila); color: var(--ciruela); font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.detalle__cerrar:hover { background: #d9cbeb; }
+body.sin-scroll { overflow: hidden; }
+
+/* ---------- Talleres ---------- */
+.talleres { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.taller { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 28px; border-radius: var(--radio); background: var(--lila); }
+.taller--pro { background: var(--salvia); }
+.taller__tag { font-size: .85rem; font-weight: 600; color: var(--ciruela); }
+.taller--pro .taller__tag { color: #2f5d50; }
+.taller h3 { font-size: 1.3rem; }
+.taller p { color: var(--tinta-suave); flex: 1; }
+
+/* ---------- Modalidades y turnos ---------- */
+.modalidades { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-bottom: 40px; }
+.modalidades img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radio); background: var(--niebla); margin-bottom: 14px; }
+.modalidades figcaption { color: var(--tinta-suave); max-width: 46ch; }
 .modalidades figcaption strong { display: block; font: 500 1.35rem/1.3 var(--f-titulo); color: var(--tinta); margin-bottom: 2px; }
+
+.turnos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 36px; padding: clamp(24px, 4vw, 40px); background: var(--blanco); border-radius: var(--radio); }
+.turnos__dato h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.turnos__dato p { color: var(--tinta-suave); }
+.turnos dl { display: grid; gap: 6px; }
+.turnos dl div { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; border-bottom: 1px solid var(--linea); padding-bottom: 6px; }
+.turnos dt { color: var(--tinta-suave); }
+.turnos dd { font: 500 1.35rem/1.2 var(--f-titulo); color: var(--ciruela); }
+.turnos__acciones { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 14px; padding-top: 8px; }
 
 /* ---------- Contacto ---------- */
 .contacto { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
 .contacto .seccion__intro { margin-bottom: 28px; }
 
+.contacto__botones { display: flex; flex-wrap: wrap; gap: 14px; }
 .lista-contacto { margin: 32px 0 40px; display: grid; gap: 14px; }
 .lista-contacto li { display: flex; gap: 12px; align-items: flex-start; }
 .lista-contacto .icono { margin-top: 4px; color: var(--ciruela); }
@@ -298,7 +338,7 @@ form .boton { justify-self: start; }
 .flotante {
     position: fixed;
     right: max(18px, env(safe-area-inset-right));
-    bottom: max(18px, env(safe-area-inset-bottom));
+    bottom: max(94px, calc(env(safe-area-inset-bottom) + 76px)); /* ~2 cm más arriba que antes */
     z-index: 90;
     width: 60px;
     height: 60px;
@@ -338,13 +378,18 @@ form .boton { justify-self: start; }
     .hero__foto { order: -1; width: min(82%, 340px); justify-self: center; margin-bottom: 8px; }
     .sobremi__datos { padding-left: 0; border-left: 0; border-top: 1px solid var(--linea); padding-top: 32px; }
     .contacto__mapa { position: static; }
-    .modalidades { grid-template-columns: 1fr; max-width: 520px; }
+    .sobremi__foto { max-width: 340px; }
+    .servicios { grid-template-columns: repeat(2, 1fr); }
+    .servicio, .servicio:nth-child(4), .servicio:nth-child(5) { grid-column: span 1; }
+    .servicio:last-child { grid-column: 1 / -1; }
+    .turnos { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
     .frases__interno { grid-template-columns: 1fr; }
-    .servicio { grid-template-columns: 1fr; gap: 20px; }
-    .servicio:nth-child(even) img { order: 0; }
+    .servicios { grid-template-columns: 1fr; }
+    .servicio:last-child { grid-column: auto; }
+    .modalidades { grid-template-columns: 1fr; }
     .campo-doble { grid-template-columns: 1fr; }
     .boton { width: 100%; }
     .boton--chico { width: auto; }

@@ -88,6 +88,31 @@
             });
     });
 
+    /* ---------- Ventanas de detalle de los servicios ---------- */
+    document.querySelectorAll('[data-abrir]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const dialogo = document.getElementById(btn.getAttribute('data-abrir'));
+            if (!dialogo || typeof dialogo.showModal !== 'function') return;
+            dialogo.showModal();
+            document.body.classList.add('sin-scroll');
+        });
+    });
+
+    document.querySelectorAll('dialog.detalle').forEach(function (dialogo) {
+        // Botón "x"
+        dialogo.querySelector('[data-cerrar]').addEventListener('click', function () { dialogo.close(); });
+        // Click fuera de la ventana
+        dialogo.addEventListener('click', function (e) {
+            if (e.target === dialogo) dialogo.close();
+        });
+        // Al cerrar (también con Esc) se vuelve a habilitar el scroll
+        dialogo.addEventListener('close', function () { document.body.classList.remove('sin-scroll'); });
+        // Si tocan "Reservar" o "WhatsApp", se cierra la ventana
+        dialogo.querySelectorAll('.detalle__acciones a').forEach(function (a) {
+            a.addEventListener('click', function () { dialogo.close(); });
+        });
+    });
+
     /* ---------- Año del pie de página ---------- */
     const anio = document.getElementById('anio');
     if (anio) anio.textContent = new Date().getFullYear();
