@@ -11,7 +11,7 @@ Sitio web de **CREA by Cecilia Rea** – Psicología aplicada a la vida real (Te
 ## Para actualizar
 - Agenda online: el link de Google Calendar está en todos los botones "Reservar turno".
 - Valores y condiciones de turnos: sección "Modalidades y reserva de turnos" en `index.html`.
-- Talleres: sección "Talleres y recursos" (links de Hotmart).
+- Talleres: sección "Talleres y recursos" (links de la tienda en Tiendup).
 
 ## Antes de publicar
 - Cuando esté definido el dominio, sumar `<link rel="canonical">` y la `url` en los datos estructurados.
